@@ -1,5 +1,6 @@
 package com.ace.hibernate.model;
 
+//Entity POJO class for mapping the database table
 public class UserForm {
 	
 	private Integer id;

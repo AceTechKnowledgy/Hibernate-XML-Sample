@@ -2,6 +2,8 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
+<!-- This file is to map the Java POJO class with the database table. Which is called as ORM -->
+
 <hibernate-mapping>
 	<class name="com.ace.hibernate.model.UserForm" table="userForm">
 		<id name="id" type="java.lang.Integer">

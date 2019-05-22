@@ -3,6 +3,9 @@
 "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
+<!-- This configuration file is used to configure the database. We need to create one configuration file 
+for each database that are using in the application -->
+
 <hibernate-configuration>
 	<session-factory>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -17,6 +20,7 @@
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
 		
-		<mapping class="com.ace.hibernate.model.UserForm" resource="config/userform-hbm.xml"></mapping>
+		<!-- We can use a POJO Java class for mapping the entity. if so we need to use "class" attribute instead-->
+		<mapping resource="config/userform-hbm.xml"></mapping>
 	</session-factory>
 </hibernate-configuration>
