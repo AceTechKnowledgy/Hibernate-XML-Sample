@@ -43,6 +43,9 @@ public class MainClass {
 		
 		//Delete a record
 		deleteUser();
+		
+		//Method to save and update a record
+		saveAndUpdateUser();
 
 		//Closing the session object
 		session.close();
@@ -114,4 +117,34 @@ public class MainClass {
 		
 		session.getTransaction().commit();
 	}
+	
+	//This method will update if any record is present and will create if there is no record with the id
+	private static void saveAndUpdateUser() {
+		UserForm userForm = new UserForm();
+		//This will insert into the database as a new record
+		userForm.setName("Anitha");
+		userForm.setEmail("anitha123@gmail.com");
+		userForm.setPassword("xyzanitha123");
+		
+		/* This will update the record for the id
+		 UserForm userForm = new UserForm();
+		 userForm.setId(4);
+		 userForm.setName("Anitha");
+		 userForm.setEmail("anitha123@gmail.com");
+		 
+		 session.saveOrUpdate(userForm);
+		 
+		 session.getTransaction().commit();
+		 */
+		
+		session.saveOrUpdate(userForm);
+		
+		//This will update the password for the above persisted object
+		userForm.setPassword("pqranitha123");
+		
+		session.getTransaction().commit();
+	}
+	
+	
+	
 }
